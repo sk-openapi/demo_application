@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InitialSettingActivity">
+
+    <ImageView
+        android:id="@+id/initial_imageView"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        android:contentDescription="@string/NoImage"
+        app:srcCompat="@drawable/splash_background_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <LinearLayout
+        android:elevation="20dp"
+        android:id="@+id/initial_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="80dp"
+        android:orientation="vertical"
+        tools:context=".InitialSettingActivity">
+
+        <TextView
+            android:id="@+id/initial_textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="평소에 더위를 많이 느끼시나요?"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:textSize="20sp"/>
+
+        <ListView
+            android:id="@+id/initial_listView1"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:choiceMode="singleChoice">
+        </ListView>
+
+        <TextView
+            android:id="@+id/initial_textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="어떤 환경에서 일하시나요?"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:textSize="20sp"/>
+        <ListView
+            android:id="@+id/initial_listView2"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:choiceMode="singleChoice">
+        </ListView>
+        <TextView
+            android:id="@+id/initial_textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="출/퇴 시간 중 야외를 얼마나 걷나요?"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:textSize="20sp"/>
+
+        <SeekBar
+            android:id="@+id/initial_seekBar"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5"
+            android:progress="0"
+            android:layout_marginTop="10dp"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/initial_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/NextButton"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="20dp"
+        android:background="#ffffff"
+        app:layout_constraintTop_toBottomOf="@id/initial_layout1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

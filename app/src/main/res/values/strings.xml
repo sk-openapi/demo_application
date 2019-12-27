@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">날씨의 옷</string>
+    <string name="NoImage">이미지가 열리지 않습니다.</string>
+    <string name="ButtonName">Button</string>
+    <string name="NextButton">완료</string>
+    <string name="temp_4">따뜻한 패딩, 코트, 목도리</string>
+    <string name="temp_5_8">코트, 가죽자켓, 히트텍</string>
+    <string name="temp_9_11">자켓, 니트, 청바지</string>
+    <string name="temp_12_16">가디건, 야상, 면바지</string>
+    <string name="temp_17_19">얇은 니트, 맨투맨, 청바지</string>
+    <string name="temp_20_22">얇은 가디건, 긴팔, 면바지</string>
+    <string name="temp_23_27">반팔, 얇은 셔츠, 반바지</string>
+    <string name="temp_28">민소매, 반팔, 반바지</string>
+    <string name="NoData">No data</string>
+    <string name="GraphName">날씨 예보</string>
+    <string name="appKey">YOUR_APPKEY</string>
+</resources>

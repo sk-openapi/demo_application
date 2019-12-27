@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LocationSettingActivity">
+    <ImageView
+        android:id="@+id/location_imageView"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        android:contentDescription="@string/NoImage"
+        app:srcCompat="@drawable/splash_background_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+    <LinearLayout
+        android:elevation="20dp"
+        android:id="@+id/location_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="80dp"
+        android:orientation="vertical"
+        tools:context=".InitialSettingActivity">
+        <LinearLayout
+            android:id="@+id/location_layout2"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <EditText
+                android:id="@+id/location_edittext"
+                android:singleLine="true"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="읍/면/동">
+
+            </EditText>
+            <Button
+                android:id="@+id/location_button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="검색"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/location_text_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <ListView
+            android:id="@+id/location_listView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:choiceMode="singleChoice">
+        </ListView>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/location_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/NextButton"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="20dp"
+        android:background="#ffffff"
+        app:layout_constraintTop_toBottomOf="@id/location_layout1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
