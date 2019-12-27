@@ -34,7 +34,7 @@ app/res/values/strings.xml
 
 * **Jongho Lee** - *Application Development* - [cafeaulait98](https://github.com/cafeaulait98)
 
-* **Seunghye Lee** - *Design* - [Seunghye-Hello](https://github.com/Seunghye-Hello)
+* **Seunghye Lee** - *Design, Application Development* - [Seunghye-Hello](https://github.com/Seunghye-Hello)
 
 
 ## License
