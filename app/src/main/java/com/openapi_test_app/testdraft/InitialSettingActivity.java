@@ -37,7 +37,7 @@ public class InitialSettingActivity extends AppCompatActivity {
         items2 = new ArrayList<>();
         items2.add("사무실");
         items2.add("문이 열려있는 실내");
-        items2.add("학생(건물별 강의실 이동");
+        items2.add("학생(건물별 강의실 이동)");
         items2.add("야외");
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_single_choice, items2);

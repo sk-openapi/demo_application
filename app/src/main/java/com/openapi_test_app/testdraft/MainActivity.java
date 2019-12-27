@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         main_address = preferences.getString("location_address", "No_address");
         main_resLon = preferences.getString("location_resLon", "No_resLon");
         main_resLat = preferences.getString("location_resLat", "No_resLat");
+        int item1position = preferences.getInt("list1position", 2);
+        int item2position = preferences.getInt("list2position", 0);
+
+        String item1str = Integer.toString(item1position);
+        String item2str = Integer.toString(item2position);
 
         editor.apply();
 
@@ -51,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         appKey = getResources().getString(R.string.appKey);
 
         task = new MainAsyncTask(main_textView_temp, main_textView_temp_yesterday, main_textView_mention, main_imageView1, main_imageView2, main_imageView3, main_imageBg);
-        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,main_resLat, main_resLon, appKey);
+        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,main_resLat, main_resLon, appKey, item1str, item2str);
 
         LineChart lineChart = findViewById(R.id.main_graph_chart);
         TextView main_textView_graph_title = findViewById(R.id.main_textView_graph_title);

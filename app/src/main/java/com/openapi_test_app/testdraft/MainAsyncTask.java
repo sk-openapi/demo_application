@@ -37,6 +37,8 @@ public class MainAsyncTask extends AsyncTask<String, String, Object> {
         resLat = strings[0];
         resLon = strings[1];
         String appKey = strings[2];
+        String item1str = strings[3];
+        String item2str = strings[4];
 
         if (resLat.length() == 0 | resLon.length() == 0){
             return false;
@@ -89,6 +91,8 @@ public class MainAsyncTask extends AsyncTask<String, String, Object> {
                     temp_yesterday = "어제와 같음";
                 }
 
+                //초기 설정 적용
+                tempFloat = tempFloat + 2 - Float.parseFloat(item1str) - Float.parseFloat(item2str);
 
                 if(tempFloat <= 4){
                     mention = "패딩, 두꺼운 코트, 목도리, 기모제품";
