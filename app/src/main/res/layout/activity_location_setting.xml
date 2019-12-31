@@ -55,7 +55,8 @@
         <TextView
             android:id="@+id/location_text_error"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="invisible">
         </TextView>
 
         <ListView

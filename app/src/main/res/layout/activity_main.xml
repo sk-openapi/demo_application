@@ -41,32 +41,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <androidx.constraintlayout.widget.Guideline
+        app:layout_constraintGuide_percent="0.15"
+        android:id="@+id/main_guideline"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
     <TextView
         android:id="@+id/main_location_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_height="0dp"
         android:text="@string/NoData"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        app:layout_constraintHeight_percent="0.05"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/main_guideline" />
     <ImageView
         android:id="@+id/main_icon_location"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="106dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="4dp"
         android:contentDescription="@string/NoImage"
+        app:layout_constraintHeight_percent="0.05"
         app:srcCompat="@drawable/ic_place_white_24dp"
         app:layout_constraintEnd_toStartOf="@id/main_location_name"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="@id/main_guideline"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_layout_temp"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.14"
         app:layout_constraintTop_toBottomOf="@id/main_location_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -100,17 +108,21 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_layout_cloth"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="horizontal"
+        app:layout_constraintWidth_percent=".80"
+        app:layout_constraintHeight_percent=".16"
         app:layout_constraintTop_toBottomOf="@id/main_layout_temp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <ImageView
             android:id="@+id/main_imageView_cloth_1"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:contentDescription="@string/NoImage"
+            app:layout_constraintWidth_percent="0.30"
+            app:layout_constraintDimensionRatio="1:1"
             app:srcCompat="@drawable/ic_cloth_4_hat"
             app:layout_constraintTop_toTopOf="@id/main_layout_cloth"
             app:layout_constraintBottom_toBottomOf="@id/main_layout_cloth"
@@ -118,9 +130,11 @@
             app:layout_constraintEnd_toStartOf="@id/main_imageView_cloth_2"/>
         <ImageView
             android:id="@+id/main_imageView_cloth_2"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:contentDescription="@string/NoImage"
+            app:layout_constraintWidth_percent="0.30"
+            app:layout_constraintDimensionRatio="1:1"
             app:srcCompat="@drawable/ic_cloth_4_sweater"
             app:layout_constraintTop_toTopOf="@id/main_layout_cloth"
             app:layout_constraintBottom_toBottomOf="@id/main_layout_cloth"
@@ -129,9 +143,11 @@
 
         <ImageView
             android:id="@+id/main_imageView_cloth_3"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:contentDescription="@string/NoImage"
+            app:layout_constraintWidth_percent="0.30"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintBottom_toBottomOf="@id/main_layout_cloth"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/main_imageView_cloth_2"
@@ -153,9 +169,10 @@
     <ImageView
         android:id="@+id/main_graph_background"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="0dp"
         android:background="#80000000"
         android:contentDescription="@string/NoImage"
+        app:layout_constraintHeight_percent = "0.33"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
     <TextView
@@ -172,8 +189,9 @@
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/main_graph_chart"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="0dp"
         android:layout_margin="10dp"
+        app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toStartOf="@id/main_graph_background"
         app:layout_constraintEnd_toEndOf="@id/main_graph_background"
         app:layout_constraintTop_toTopOf="@id/main_graph_background"

@@ -1,6 +1,9 @@
 package com.openapi_test_app.testdraft;
 
 import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Shader;
 import android.os.AsyncTask;
 import android.widget.TextView;
 
@@ -138,8 +141,12 @@ public class MainGraphAsyncTask extends AsyncTask<String, Object, Object> {
         LineDataSet lineDataSet = new LineDataSet(val, null);
         LineData lineData = new LineData(lineDataSet);
 
+        lineDataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        lineDataSet.setCubicIntensity(0.2f);
+        lineDataSet.setLineWidth(3f);
         lineDataSet.setDrawCircleHole(true);
         lineDataSet.setCircleColor(Color.BLACK);
+        lineDataSet.setDrawHighlightIndicators(false);
         lineChart.setDescription(null);
         lineChart.getLegend().setEnabled(false);
 
@@ -147,12 +154,15 @@ public class MainGraphAsyncTask extends AsyncTask<String, Object, Object> {
         lineChart.getAxisLeft().setDrawGridLines(false);
         lineChart.getAxisRight().setDrawGridLines(false);
 
-        //lineChart.getAxisLeft().setEnabled(false);
-        //lineChart.getAxisRight().setEnabled(false);
-
-
         lineData.setValueTextSize(12);
         lineData.setValueTextColor(Color.WHITE);
+
+        Paint paint = lineChart.getRenderer().getPaintRender();
+
+        int height = lineChart.getHeight();
+        LinearGradient linGrad = new LinearGradient(0,0,0,height, 0xFFFF0000, 0xBA0000FF, Shader.TileMode.REPEAT);
+        paint.setShader(linGrad);
+
         lineChart.setData(lineData);
         lineChart.getAxisLeft().setTextColor(Color.WHITE);
         lineChart.getXAxis().setTextColor(Color.WHITE);
