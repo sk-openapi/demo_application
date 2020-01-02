@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.github.mikephil.charting.charts.LineChart;
 
 public class MainActivity extends AppCompatActivity {
+    public static AppCompatActivity activity;
     private TextView main_text1;
     protected SharedPreferences preferences;
     protected SharedPreferences.Editor editor;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        activity = MainActivity.this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent_location_to_location_setting = new Intent(MainActivity.this, LocationSettingActivity.class);
                 MainActivity.this.startActivity(intent_location_to_location_setting);
-                finish();
+
             }
         });
     }

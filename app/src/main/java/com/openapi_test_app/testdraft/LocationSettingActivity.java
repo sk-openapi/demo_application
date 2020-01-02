@@ -87,6 +87,8 @@ public class LocationSettingActivity extends AppCompatActivity {
                 }catch (Exception e){
                     e.printStackTrace();
                 }
+                MainActivity MA = (MainActivity) MainActivity.activity;
+                MA.finish();
 
                 Intent intent_location_to_main = new Intent(LocationSettingActivity.this, MainActivity.class);
                 LocationSettingActivity.this.startActivity(intent_location_to_main);
