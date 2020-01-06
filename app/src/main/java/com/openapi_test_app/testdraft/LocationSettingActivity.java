@@ -84,11 +84,12 @@ public class LocationSettingActivity extends AppCompatActivity {
                     editor.putString("location_resLat", firstHashMap.get("resLat"));
                     editor.putString("location_resLon", firstHashMap.get("resLon"));
                     editor.apply();
+                    MainActivity MA = (MainActivity) MainActivity.activity;
+                    MA.finish();
+
                 }catch (Exception e){
                     e.printStackTrace();
                 }
-                MainActivity MA = (MainActivity) MainActivity.activity;
-                MA.finish();
 
                 Intent intent_location_to_main = new Intent(LocationSettingActivity.this, MainActivity.class);
                 LocationSettingActivity.this.startActivity(intent_location_to_main);
