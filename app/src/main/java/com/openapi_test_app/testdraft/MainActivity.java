@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public MainGraphAsyncTask task_graph;
     public TextView main_textView_temp, main_textView_temp_yesterday, main_textView_mention, main_textView_time;
     public ImageView main_imageView1, main_imageView2, main_imageView3, main_imageView_button, main_imageBg, main_imageView_refresh;
+    private Date date_loading;
 
 
     @Override
@@ -71,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
         task_graph = new MainGraphAsyncTask(lineChart, main_textView_graph_title);
         task_graph.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,main_resLat, main_resLon, appKey);
 
-        long now = System.currentTimeMillis();
-        Date date = new Date(now);
+        long time_now = System.currentTimeMillis();
+        date_loading = new Date(time_now);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-        String getTime = simpleDateFormat.format(date);
+        String getTime = simpleDateFormat.format(date_loading);
         main_textView_time.setText(getTime);
 
         main_imageView_button = findViewById(R.id.main_icon_location_add);
@@ -90,17 +91,23 @@ public class MainActivity extends AppCompatActivity {
         main_imageView_refresh.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                task = new MainAsyncTask(main_textView_temp, main_textView_temp_yesterday, main_textView_mention, main_imageView1, main_imageView2, main_imageView3, main_imageBg);
-                task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,main_resLat, main_resLon, appKey, item1str, item2str);
+                long time_refresh = System.currentTimeMillis();
+                Date date_refresh = new Date(time_refresh);
 
-                task_graph = new MainGraphAsyncTask(lineChart, main_textView_graph_title);
-                task_graph.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,main_resLat, main_resLon, appKey);
+                long duration = date_refresh.getTime() - date_loading.getTime();
+                long min = duration/60000;
+                if (min >= 1){
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                    String getTime = simpleDateFormat.format(date_refresh);
+                    main_textView_time.setText(getTime);
+                    date_loading = date_refresh;
 
-                long now = System.currentTimeMillis();
-                Date date = new Date(now);
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                String getTime = simpleDateFormat.format(date);
-                main_textView_time.setText(getTime);
+                    task = new MainAsyncTask(main_textView_temp, main_textView_temp_yesterday, main_textView_mention, main_imageView1, main_imageView2, main_imageView3, main_imageBg);
+                    task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,main_resLat, main_resLon, appKey, item1str, item2str);
+
+                    task_graph = new MainGraphAsyncTask(lineChart, main_textView_graph_title);
+                    task_graph.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,main_resLat, main_resLon, appKey);
+                }
             }
         });
     }
